@@ -1,0 +1,86 @@
+Module SchoolManagementSystem
+
+    Sub Main()
+        ' Declare variables for student details
+        Dim studentName As String
+        Dim rollNumber As Integer
+        Dim studentClass As String
+        Dim registrationID As String
+        Dim department As String
+        Dim faculty As String
+        Dim marks As Integer
+        Dim percentage As Double
+        Dim rank As String
+
+        ' Input Phase: Prompt user for student details
+        Console.WriteLine("Welcome to the School Management System")
+        Console.WriteLine("Please enter the following student details:")
+        
+        Console.Write("Student Name: ")
+        studentName = Console.ReadLine()
+        
+        Console.Write("Roll Number: ")
+        rollNumber = Integer.Parse(Console.ReadLine())
+        
+        Console.Write("Class: ")
+        studentClass = Console.ReadLine()
+        
+        Console.Write("Registration ID: ")
+        registrationID = Console.ReadLine()
+        
+        Console.Write("Department: ")
+        department = Console.ReadLine()
+        
+        Console.Write("Faculty: ")
+        faculty = Console.ReadLine()
+        
+        Console.Write("Marks (out of 500): ")
+        marks = Integer.Parse(Console.ReadLine())
+
+        ' Processing Phase: Calculate percentage and assign rank
+        percentage = (marks / 500.0) * 100
+        
+        If percentage >= 90 Then
+            rank = "1st Position"
+        ElseIf percentage >= 80 Then
+            rank = "2nd Position"
+        ElseIf percentage >= 70 Then
+            rank = "3rd Position"
+        Else
+            rank = "No Position"
+        End If
+
+        ' Output Phase: Display complete student report
+        Console.WriteLine(vbCrLf & "----- Student Report -----")
+        Console.WriteLine("Student Name: " & studentName)
+        Console.WriteLine("Roll Number: " & rollNumber)
+        Console.WriteLine("Class: " & studentClass)
+        Console.WriteLine("Registration ID: " & registrationID)
+        Console.WriteLine("Department: " & department)
+        Console.WriteLine("Faculty: " & faculty)
+        Console.WriteLine("Marks: " & marks & "/500")
+        Console.WriteLine("Percentage: " & percentage.ToString("F2") & "%")
+        Console.WriteLine("Rank: " & rank)
+
+        ' Display available Departments list
+        Console.WriteLine(vbCrLf & "----- Available Departments -----")
+        Console.WriteLine("• Computer Science")
+        Console.WriteLine("• Pre-Engineering")
+        Console.WriteLine("• Pre-Medical")
+        Console.WriteLine("• Commerce")
+        Console.WriteLine("• Arts")
+
+        ' Display Class Sections
+        Console.WriteLine(vbCrLf & "----- Class Sections -----")
+        Console.WriteLine("• 9th – A, B")
+        Console.WriteLine("• 10th – A, B")
+        Console.WriteLine("• 1st Year – A, B")
+        Console.WriteLine("• 2nd Year – A, B")
+
+        ' Pause to view output
+        Console.WriteLine(vbCrLf & "Press any key to exit...")
+        Console.ReadKey()
+
+    End Sub
+
+End Module
